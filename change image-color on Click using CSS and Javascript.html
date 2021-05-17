@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{ display: flex; align-items: center; min-height: 100vh;}
+.container img{ position: absolute; top:50%;left: 50%; transform: translate(-50%,-50%);max-width: 300px;}
+.container .nav{display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 10%; background: #fff;}
+.container .nav span{position: relative; width: 20px; height: 20px;margin: 10px 5px; background: #f00; border-radius: 50%;cursor: pointer;z-index: 2;}
+.container .nav span.purple, .container .nav i.purple{background: #760ca7;}
+.container .nav span.blue, .container .nav i.blue{background: #202fff;}
+.container .nav span.red, .container .nav i.red{background: #ff0000;}
+.container .nav span.green, .container .nav i.green{background: #02ff2c;}
+.container .nav span.active{transform: scale(1.2); border: 2px solid #000;}
+.container .nav span.active + i{position: absolute;top: 0;left: 0; width: 100%; height: 100%; z-index: 1; mix-blend-mode: hue;}
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <span class="purple active" onclick="changeColor(event)">
+             </span>
+                <i class="purple"></i>
+           
+            <span class="blue" onclick="changeColor(event)">   
+            </span>
+                <i class="blue"></i>
+         
+            <span class="red" onclick="changeColor(event)">    
+              </span>
+                <i class="red"></i>
+      
+            <span class="green" onclick="changeColor(event)"> 
+            </span>
+                <i class="green"></i>  
+               <img src="images/watch.png" alt="">
+        </div>
+    </div>
+
+<script>
+    function changeColor(event){
+        const removeClass = document.querySelector('span.active');
+        removeClass.classList.remove('active')
+        event.target.classList.add('active')
+    }
+</script>
+
+</body>
+</html>
